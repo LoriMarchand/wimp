@@ -56,6 +56,18 @@ public class Actor {
 		return activeSinceYear;
 	}
 
+	public void setActiveSinceYear(Long activeSinceYear) {
+		this.activeSinceYear = activeSinceYear;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public Long getActiveSinceYear() {
+		return activeSinceYear;
+	}
+
 	public void setActiveSinceLastYear(Long activeSinceYear) {
 		this.activeSinceYear = activeSinceYear;
 	}
