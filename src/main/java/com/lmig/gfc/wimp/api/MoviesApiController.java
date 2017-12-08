@@ -16,7 +16,7 @@ import com.lmig.gfc.wimp.models.Movie;
 import com.lmig.gfc.wimp.repositories.MovieRepository;
 
 @RestController
-@RequestMapping("/api/movies")
+@RequestMapping("/api/movies{id}")
 
 public class MoviesApiController {
 	private MovieRepository movieRepository;

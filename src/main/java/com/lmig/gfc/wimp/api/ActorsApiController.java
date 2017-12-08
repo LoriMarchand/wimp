@@ -17,7 +17,7 @@ import com.lmig.gfc.wimp.models.Actor;
 import com.lmig.gfc.wimp.repositories.ActorRepository;
 
 @RestController
-@RequestMapping("/api/actors")
+@RequestMapping("/api/actors{id}")
 
 public class ActorsApiController {
 
