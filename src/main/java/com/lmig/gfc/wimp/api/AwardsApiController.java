@@ -1,6 +1,9 @@
 package com.lmig.gfc.wimp.api;
 
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lmig.gfc.wimp.models.Actor;
 import com.lmig.gfc.wimp.models.Awards;
+import com.lmig.gfc.wimp.models.Movie;
 import com.lmig.gfc.wimp.repositories.ActorRepository;
 import com.lmig.gfc.wimp.repositories.AwardsRepository;
 
@@ -23,6 +27,11 @@ public class AwardsApiController {
 		this.awardRepository = awardRepository;
 		this.actorRepository = actorRepository;
 
+	}
+	
+	@GetMapping("")
+	public List<Awards> getAll() {
+		return awardRepository.findAll();
 	}
 
 	@PostMapping("")
@@ -49,4 +58,5 @@ public class AwardsApiController {
 	public void setActorRepository(ActorRepository actorRepository) {
 		this.actorRepository = actorRepository;
 	}
+
 }

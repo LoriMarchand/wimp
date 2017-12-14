@@ -11,14 +11,12 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.lmig.gfc.wimp.api.ActorsApiController;
 import com.lmig.gfc.wimp.models.Actor;
-import com.lmig.gfc.wimp.models.Movie;
 import com.lmig.gfc.wimp.repositories.ActorRepository;
 
-public class ActorsApiControllerTests {
+
+public class ActorsApiControllerTests {	
 
 	@Mock private ActorsApiController controller;
 	@Mock private ActorRepository repo;
@@ -30,47 +28,35 @@ public class ActorsApiControllerTests {
 
 	}
 
-//	@Test
-//	public void getAll_names_of_actors() {
-//		ArrayList<Actor> actors = new ArrayList<Actor>();
-//		when(repo.findAll()).thenReturn(actors);
-//		// Arrange
-//		// when(the method call used in the code is being tested)
-//		// .thenReturn(a value that you created)
-//
-//		// Act
-//		List<Actor> actual = controller.getAll();
-//
-//		// Assert
-//		assertThat(actual).isSameAs(actors);
-//		verify(repo).findAll();
-//
-//	}
-//
-//	@Test
-//	public void getAll_awards_with_female_gender_returns_list_of_actors() {
-//		// Arrange
-//		ArrayList<Actor> actors = new ArrayList<Actor>();
-//		ModelAndView female = new ModelAndView();
-//		when(repo.findByGender("female")).thenReturn(actors);
-//
-//		// Arrange
-//		// when(the method call used in the code is being tested)
-//		// .thenReturn(a value that you created)
-//
-//		// Act
-//		List<Actor> actual = controller.getAll("female");
-//
-//		// Assert
-//		assertThat(actual).isSameAs(actors);
-//		verify(repo).findByGender("female");
-//	}
+	@Test
+	public void getAll_actors_to_validate_list_of_actors_returned() {
+		ArrayList<Actor> actors = new ArrayList<Actor>();
+		when(repo.findAll()).thenReturn(actors);
+		// Arrange
+		// when(the method call used in the code is being tested)
+		// .thenReturn(a value that you created)
 
+		// Act
+		List<Actor> actual = controller.getAll();
+
+		// Assert
+		assertThat(actual).isSameAs(actors);
+		verify(repo).findAll();
+
+	}
+
+	@Test
+  public void getAll_list_of_actors_who_received_awards_returned() {
+	 		// Arrange
+	 		// when(the method call used in the code is being tested)
+	 		// .thenReturn(a value that you created)
+		ArrayList<Actor> actors = new ArrayList<Actor>();
+		when(repo.findAll()).thenReturn(actors);
+			// Act
+	List<Actor> actual = controller.getAll();
+			// Assert
+			assertThat(actual).isSameAs(actors);
+			verify(repo).findAll();
+ }
 }
 
-//@Test
-//	ArrayList<Actor> actors = new ArrayList<Actor>();
-//
-//when(repo.findByGender("female")).thenReturn(actor);
-	// when(the method call used in the code is being tested)
-	// .thenReturn(a value that you created)
